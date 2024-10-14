@@ -1,0 +1,14 @@
+---
+- hosts: static_server
+  become: true
+  vars_files:
+    - vars/users.yml
+    - vars/packages_list.yml
+    - vars/nginx.yml
+  roles:
+    - users
+    - shell
+    - ssh_config
+    - packages_list
+    - install_nginx
+    - static_content_deploy

@@ -1,0 +1,24 @@
+---
+- name: Install zsh
+  apt:
+    name: "zsh"
+    state: present
+  when: item.shell is defined and (item.shell == '/bin/zsh' or item.shell == '/bin/ohmyzsh')
+  loop: "{{ users }}"
+
+- name: Install ohmyzsh
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: ~/.oh-my-zsh
+    depth: 1
+  become: true
+  when: item.shell is defined and item.shell == '/bin/ohmyzsh'
+  loop: "{{ users }}"
+
+- name: change shell
+  user:
+    name: "{{ item.name }}"
+    shell: /bin/zsh
+  become: true
+  when: item.shell is defined and item.shell == '/bin/ohmyzsh'
+  loop: "{{ users }}"

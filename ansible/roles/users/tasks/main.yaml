@@ -1,0 +1,28 @@
+---
+- name: Ensure groups are present
+  group:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ users | map(attribute='groups') | flatten(levels=1) | unique }}"
+  
+- name: list of user groups
+  debug:
+    msg: "{{ users | map(attribute='groups') | flatten(levels=1) | unique }}"
+  
+- name: Ensure users are present
+  user:
+    name: "{{ item.name }}"
+    shell: "{{ item.shell | default('/bin/bash') }}"
+    state: "{{ item.state | default('present') }}"
+    groups: "{{ item.groups | join(',') }}"
+    password: "{{ item.password | password_hash('sha512') }}"
+    update_password: on_create
+  loop: "{{ users }}"
+
+- name: Ensure SSH keys are present for users
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.ssh_key }}"
+    state: present
+  loop: "{{ users }}"
+  when: item.ssh_key is defined

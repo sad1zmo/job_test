@@ -1,0 +1,8 @@
+version: '3'
+services:
+  static_server:
+    build: .
+    ports:
+      - "80:80"
+      - "222:22"
+    restart: always

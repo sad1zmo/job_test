@@ -1,0 +1,30 @@
+---
+- name: install Nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: copy Nginx config
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify: Restart NGINX
+
+- name: copy vhost
+  template:
+    src: vhost.conf.j2
+    dest: /etc/nginx/sites-available/{{ nginx_vhost }}
+  notify: Restart NGINX
+
+- name: disable default vhost
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: Restart NGINX
+
+- name: enable vhost
+  file:
+    src: /etc/nginx/sites-available/{{ nginx_vhost }}
+    dest: /etc/nginx/sites-enabled/{{ nginx_vhost }}
+    state: link
+  notify: Restart NGINX

@@ -1,0 +1,35 @@
+---
+users:
+  - name: "user1"
+    shell: "/bin/bash"
+    state: "present"
+    groups:
+      - "test1"
+      - "test2"
+      - "test5"
+    password: "gfhjkm123"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFS1+k9WleQcouciX9bIHul2jmvbzaAX5GS+xUAHgHfM1M9ai7KQbF4IuLfR4f9VCEnvF6FeqQKrI9wP6yMJi1nLenc+x4XEsEHQZYC1+vPkikHnifMbzPYv61Jgk7jg2Q9Sd3Bwme9rfqfkikzNEyZV6QDQanTnAV5hx6xuXYDUo4+9nCiwnjoLoNn4ec3qWAl/U/plAVKgeYuLMi9cZMqN5aW2edbyO/pc6ewFNGBbGz6DMlKvQTiZQMKFREQtvuhL/dZcbctb/rMxNNkm/zrUq+vM3E6Dz789eTbS73lZdyW05odxjpKC8OBlCocLcq+IeGgcoJCIOSOGJfveZDkHnDs3Xcr0vgFU8l2WrTNBlUf/8BPg/rUZRAwloOF5TLj98S9pI4TXOAgMXlVz+4PivWv1YH5ILMmMpl8zT2qlvTAD3UOLmJoti2qYXBjqJP3LYUB1bLrB0DOSfUpsQr87iExgXSZw1UX/ZxB4XWQndjmTjqKvZaIp3LBpzm/tE= suz1k@biohazard"
+  
+  - name: "user2"
+    shell: "/bin/bash"
+    state: "present"
+    groups: 
+      - "test5"
+    password: "gfhjkm123"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFS1+k9WleQcouciX9bIHul2jmvbzaAX5GS+xUAHgHfM1M9ai7KQbF4IuLfR4f9VCEnvF6FeqQKrI9wP6yMJi1nLenc+x4XEsEHQZYC1+vPkikHnifMbzPYv61Jgk7jg2Q9Sd3Bwme9rfqfkikzNEyZV6QDQanTnAV5hx6xuXYDUo4+9nCiwnjoLoNn4ec3qWAl/U/plAVKgeYuLMi9cZMqN5aW2edbyO/pc6ewFNGBbGz6DMlKvQTiZQMKFREQtvuhL/dZcbctb/rMxNNkm/zrUq+vM3E6Dz789eTbS73lZdyW05odxjpKC8OBlCocLcq+IeGgcoJCIOSOGJfveZDkHnDs3Xcr0vgFU8l2WrTNBlUf/8BPg/rUZRAwloOF5TLj98S9pI4TXOAgMXlVz+4PivWv1YH5ILMmMpl8zT2qlvTAD3UOLmJoti2qYXBjqJP3LYUB1bLrB0DOSfUpsQr87iExgXSZw1UX/ZxB4XWQndjmTjqKvZaIp3LBpzm/tE= suz1k@biohazard"
+
+  - name: "user3"
+    shell: "/bin/zsh"
+    state: "present"
+    groups: 
+      - "user3"
+    password: "gfhjkm123"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFS1+k9WleQcouciX9bIHul2jmvbzaAX5GS+xUAHgHfM1M9ai7KQbF4IuLfR4f9VCEnvF6FeqQKrI9wP6yMJi1nLenc+x4XEsEHQZYC1+vPkikHnifMbzPYv61Jgk7jg2Q9Sd3Bwme9rfqfkikzNEyZV6QDQanTnAV5hx6xuXYDUo4+9nCiwnjoLoNn4ec3qWAl/U/plAVKgeYuLMi9cZMqN5aW2edbyO/pc6ewFNGBbGz6DMlKvQTiZQMKFREQtvuhL/dZcbctb/rMxNNkm/zrUq+vM3E6Dz789eTbS73lZdyW05odxjpKC8OBlCocLcq+IeGgcoJCIOSOGJfveZDkHnDs3Xcr0vgFU8l2WrTNBlUf/8BPg/rUZRAwloOF5TLj98S9pI4TXOAgMXlVz+4PivWv1YH5ILMmMpl8zT2qlvTAD3UOLmJoti2qYXBjqJP3LYUB1bLrB0DOSfUpsQr87iExgXSZw1UX/ZxB4XWQndjmTjqKvZaIp3LBpzm/tE= suz1k@biohazard"
+
+  - name: "user4"
+    shell: "/bin/ohmyzsh"
+    state: "present"
+    groups: 
+      - "user4"
+    password: "gfhjkm123"
+    ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFS1+k9WleQcouciX9bIHul2jmvbzaAX5GS+xUAHgHfM1M9ai7KQbF4IuLfR4f9VCEnvF6FeqQKrI9wP6yMJi1nLenc+x4XEsEHQZYC1+vPkikHnifMbzPYv61Jgk7jg2Q9Sd3Bwme9rfqfkikzNEyZV6QDQanTnAV5hx6xuXYDUo4+9nCiwnjoLoNn4ec3qWAl/U/plAVKgeYuLMi9cZMqN5aW2edbyO/pc6ewFNGBbGz6DMlKvQTiZQMKFREQtvuhL/dZcbctb/rMxNNkm/zrUq+vM3E6Dz789eTbS73lZdyW05odxjpKC8OBlCocLcq+IeGgcoJCIOSOGJfveZDkHnDs3Xcr0vgFU8l2WrTNBlUf/8BPg/rUZRAwloOF5TLj98S9pI4TXOAgMXlVz+4PivWv1YH5ILMmMpl8zT2qlvTAD3UOLmJoti2qYXBjqJP3LYUB1bLrB0DOSfUpsQr87iExgXSZw1UX/ZxB4XWQndjmTjqKvZaIp3LBpzm/tE= suz1k@biohazard"

@@ -1,0 +1,17 @@
+---
+- name: Create static directory
+  file:
+    path: /var/www/html/images
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0755'
+
+- name: Copy files
+  copy:
+    src: ../images/
+    dest: /var/www/html/images/
+    owner: www-data
+    group: www-data
+    mode: '0644'
+  notify: Restart NGINX
